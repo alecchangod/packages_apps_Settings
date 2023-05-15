@@ -16,19 +16,27 @@
 
 package com.android.settings.homepage;
 
+import static android.provider.Settings.System.CUSTOM_UI_TOGGLE;
 import static com.android.settings.search.actionbar.SearchMenuController.NEED_SEARCH_ICON_IN_ACTION_BAR;
 import static com.android.settingslib.search.SearchIndexable.MOBILE;
 
+import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.settings.SettingsEnums;
+import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.UserHandle;
+import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.preference.Preference;
@@ -51,6 +59,8 @@ import com.android.settings.widget.HomepagePreferenceLayoutHelper.HomepagePrefer
 import com.android.settingslib.core.instrumentation.Instrumentable;
 import com.android.settingslib.drawer.Tile;
 import com.android.settingslib.search.SearchIndexable;
+import com.android.settingslib.widget.LayoutPreference;
+import com.android.settings.widget.EntityHeaderController;
 
 @SearchIndexable(forTarget = MOBILE)
 public class TopLevelSettings extends DashboardFragment implements SplitLayoutListener,
@@ -195,6 +205,25 @@ public class TopLevelSettings extends DashboardFragment implements SplitLayoutLi
                 icon.setTint(tintColor);
             }
         });
+	int customUIToggleValue = Settings.System.getInt(getContext().getContentResolver(),
+                 CUSTOM_UI_TOGGLE, 0);
+            if (customUIToggleValue == 1) {
+                onSetPrefCard();
+            }
+    }
+
+    private void onSetPrefCard() {
+        final PreferenceScreen screen = getPreferenceScreen();
+        final int count = screen.getPreferenceCount();
+        for (int i = 0; i < count; i++) {
+            final Preference preference = screen.getPreference(i);
+
+            String key = preference.getKey();
+            preference.setLayoutResource(R.layout.top_level_card);
+	    if (key.equals("top_level_about_device")) {
+                preference.setLayoutResource(R.layout.top_level_about);
+            }
+	}
     }
 
     @Override
