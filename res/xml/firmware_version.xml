@@ -51,7 +51,6 @@
         android:title="@string/about_device_name"
         android:summary="@string/summary_placeholder"
         settings:enableCopying="false"
-        android:selectable="false"        
         settings:controller="com.android.settings.deviceinfo.firmwareversion.AboutDeviceNamePreferenceController"/>
 
     <!-- ROM version -->
@@ -68,7 +67,6 @@
         android:title="@string/build_maintainer"
         android:summary="@string/summary_placeholder"
         settings:enableCopying="false"
-        android:selectable="false"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.RomBuildMaintainerPreferenceController"/>
 
     <!-- Security patch -->
