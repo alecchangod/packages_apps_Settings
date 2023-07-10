@@ -961,6 +961,7 @@
     <string name="security_settings_face_enroll_error_timeout_dialog_message">Face enrollment time limit reached. Try again.</string>
     <!-- Dialog message for dialog which shows when face cannot be enrolled due to an internal error or face can't be read. -->
     <string name="security_settings_face_enroll_error_generic_dialog_message">Face enrollment didn\'t work.</string>
+<string name="security_settings_face_enroll_finish_description">Now you can use your face to unlock your phone or verify it’s you, like when you sign in to apps or approve a purchase</string>
     <!-- Message shown in face enrollment dialog once enrollment is completed -->
     <string name="security_settings_face_enroll_finish_title">All set. Looking good.</string>
     <!-- Button text to exit face wizard after everything is done [CHAR LIMIT=15] -->
@@ -2022,7 +2023,9 @@
     <!-- Bluetooth settings. Text displayed when Bluetooth is off and device list is empty [CHAR LIMIT=50]-->
     <string name="bluetooth_empty_list_bluetooth_off">When Bluetooth is turned on, your device can communicate with other nearby Bluetooth devices.</string>
     <!-- Bluetooth settings. Text displayed when Bluetooth is off and bluetooth scanning is turned on [CHAR LIMIT=NONE] -->
-    <string name="bluetooth_scanning_on_info_message">When Bluetooth is turned on, your device can communicate with other nearby Bluetooth devices.\n\nTo improve device experience, apps and services can still scan for nearby devices at any time, even when Bluetooth is off. This can be used, for example, to improve location-based features and services. You can change this in <annotation id="link">Bluetooth scanning settings</annotation>.</string>
+    <string name="bluetooth_scanning_on_info_message">When Bluetooth is turned on, your device can communicate with other nearby Bluetooth devices.\n\nTo improve device experience, apps and services can still scan for nearby devices at any time, even when Bluetooth is off. This can be used, for example, to improve location-based features and services. You can change this in Bluetooth scanning settings.</string>
+    <!-- Bluetooth settings. Link text to bring the user to "scanning settings" screen. [CHAR LIMIT=NONE]-->
+    <string name="bluetooth_scan_change">Change</string>
     <!-- Message to describe "BLE scan always available feature" when Bluetooth is off. The
       place-holders "LINK_BEGIN" and "LINK_END" must NOT be translated. They mark a link to bring
       the user to "scanning settings" screen. -->
@@ -2032,6 +2035,7 @@
       settings<xliff:g id="link_end">LINK_END</xliff:g>.</string>
     <!-- Bluetooth connecting error message [CHAR LIMIT=NONE] -->
     <string name="bluetooth_connect_failed">Couldn\'t connect. Try again.</string>
+
 
     <!-- Title of device details screen [CHAR LIMIT=28]-->
     <string name="device_details_title">Device details</string>
@@ -3235,6 +3239,10 @@
     <string name="auto_rotate_summary_no_permission">Camera access is required for Face Detection. Tap to manage permissions for Device Personalization Services</string>
     <!-- auto_rotate settings screen, text for the camera permission button [CHAR LIMIT=NONE]-->
     <string name="auto_rotate_manage_permission_button">Manage permissions</string>
+    <!-- Display settings screen, increased touch sensitivity settings title [CHAR LIMIT=30] -->
+    <string name="touch_sensitivity_title">Increase touch sensitivity</string>
+    <!-- Display settings screen, increased touch sensitivity settings summary [CHAR LIMIT=NONE] -->
+    <string name="touch_sensitivity_summary">Improves touch when using screen protectors</string>
 
     <!-- Night display screen, setting option name to enable night display (renamed "Night Light" with title caps). [CHAR LIMIT=30] -->
     <string name="night_display_title">Night Light</string>

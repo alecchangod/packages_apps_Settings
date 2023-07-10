@@ -2653,8 +2653,14 @@
                        android:value="@string/menu_key_connected_devices"/>
         </activity>
 
-        <activity android:name=".development.AppPicker"
-                  android:label="@string/select_application" />
+        <activity
+            android:name=".development.AppPicker"
+            android:label="@string/select_application">
+
+            <meta-data
+                android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.development.AppPicker$AppPickerListFragment" />
+        </activity>
 
         <activity android:name=".development.AdbQrCodeActivity" />
 
@@ -4579,6 +4585,21 @@
             android:exported="true">
             <intent-filter android:priority="1">
                 <action android:name="com.android.settings.intent.action.FACE_ENROLL"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <!-- Face enroll -->
+        <activity android:theme="@style/SudThemeGlif.Light"
+                  android:name="com.android.settings.biometrics.face.FaceEnrollActivityDirector"
+                  android:exported="true"
+                  android:screenOrientation="portrait"/>
+        <activity android:theme="@style/SudThemeGlif.Light"
+                  android:name="com.android.settings.biometrics.face.FaceEnrollConfirmation"
+                  android:exported="true"
+                  android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.google.android.settings.action.CONFIRM_FACE_ENROLLMENT"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
